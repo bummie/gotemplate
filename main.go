@@ -2,25 +2,13 @@ package main
 
 import (
 	"fmt"
+	"goindextemplate/handlers"
 	"net/http"
 )
 
-func hello(w http.ResponseWriter, req *http.Request) {
-
-	fmt.Fprintf(w, "hello\n")
-}
-
-func headers(w http.ResponseWriter, req *http.Request) {
-
-	for name, headers := range req.Header {
-		for _, h := range headers {
-			fmt.Fprintf(w, "%v: %v\n", name, h)
-		}
-	}
-}
-
 func main() {
+	fmt.Println("Starting server on port 8090")
 
-	http.HandleFunc("/hello", hello)
-	http.ListenAndServe(":8080", nil)
+	http.HandleFunc("/status", handlers.Status)
+	http.ListenAndServe(":8090", nil)
 }

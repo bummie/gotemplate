@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>HELO</h2>
+
+    <table>
+        <tr>
+          <th>Table</th>
+          <th>Status</th>
+          <th>Version</th>
+          <th>StatusMessage</th>
+          <th>LastSeen</th>
+          <th></th>
+        </tr>
+        {{range $table, $element := .}}
+          <tr>
+            <td>{{$table}}</td>
+            <td>{{$element.Status}}</td>
+            <td>{{$element.Version}}</td>
+            <td>{{$element.StatusMessage}}</td>
+            <td>{{$element.HumanLastSeen}}</td>
+            <td><button>hello</button></td>
+          </tr>
+        {{end}}
+      </table>
+    </body>
+</html>
