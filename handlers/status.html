@@ -38,7 +38,7 @@
             <td>{{$element.Version}}</td>
             <td>{{$element.StatusMessage}}</td>
             <td>{{$element.HumanLastSeen}}</td>
-            <td><button>hello</button></td>
+            <td><button onclick="document.location='rerun?data={{$table}}'">Reindex</button></td>
           </tr>
         {{end}}
       </table>
